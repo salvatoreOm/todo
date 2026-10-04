@@ -51,6 +51,36 @@ podman compose ps
 
 Wait until the status shows `healthy`.
 
+## Usage
+
+Build the app, then run it:
+
+```bash
+go build -o bin/todo ./cmd/todo
+
+./bin/todo add "buy milk"
+./bin/todo list
+./bin/todo toggle 1
+./bin/todo update 1 "buy oat milk"
+./bin/todo delete 1
+```
+
+| Command | What it does |
+|---|---|
+| `add <title>` | Add a todo |
+| `list` | Show all todos (`[x]` means done) |
+| `toggle <id>` | Mark done, or not done if it already is |
+| `update <id> <title>` | Change the title |
+| `delete <id>` (or `rm`) | Delete a todo |
+
+Run `./bin/todo --help` for details. The table is created automatically on first run.
+
+## Tests
+
+```bash
+go test ./... -race
+```
+
 ## Database commands
 
 | Command | What it does |
