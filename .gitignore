@@ -1,0 +1,31 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+
+# Build output
+/bin/
+/todo
+*.exe
+
+# Test and coverage output
+*.test
+*.out
+coverage.*
+
+# Local database data
+/volumes/
+*.pgdata
+
+# Go workspace
+go.work
+go.work.sum
+
+# Editors and OS files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Claude Code local files
+.claude/
